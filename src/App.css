@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #14181B;
+  --white: #E6E6E6;
+  --sub-text: hsl(0, 0%, 70%);
+  --sky-blue: #4AA4B9;
+}
+
+html {
+  font-family: monospace;
+  background-color: var(--bg);
+  color: var(--white)
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 6rem;
+  font-weight: 500;
+}
