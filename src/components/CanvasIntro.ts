@@ -187,7 +187,7 @@ export default function CanvasIntro(canvas: HTMLCanvasElement) {
   function render() {
     uniforms.uTime.value = clock.getElapsedTime();
     renderer.render(scene, camera);
-    requestAnimationFrame(render);
+    frameId = requestAnimationFrame(render);
   }
   render();
 
