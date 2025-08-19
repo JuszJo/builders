@@ -5,10 +5,10 @@ import { RoundedButton } from "../components/Button";
 
 function Header() {
   return (
-    <div className="text-center">
+    <div className="text-center px-4">
       <h1>Building for <br /> <span className="">Digital</span> Businesses</h1>
-      <div className="pt-4 text-[18px] text-[var(--sub-text)]">
-        <p>Empowering small business with modern <br /> solutions that increases digital reach.</p>
+      <div className="pt-4 text-[18px] text-[var(--sub-text)] max-w-[500px] m-auto">
+        <p>Empowering small business with modern solutions that increases digital reach.</p>
       </div>
       <div className="pt-8">
         <RoundedButton custom_value="Get Started" />

@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #14181B;
-  --white: #E6E6E6;
+  --bg: #14181b;
+  --white: #e6e6e6;
   --sub-text: hsl(0, 0%, 70%);
-  --sky-blue: #4AA4B9;
+  --sky-blue: #4aa4b9;
 }
 
 html {
   font-family: monospace;
   background-color: var(--bg);
-  color: var(--white)
+  color: var(--white);
 }
 
 h1 {
@@ -18,3 +18,10 @@ h1 {
   line-height: 6rem;
   font-weight: 500;
 }
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
