@@ -1,50 +1,40 @@
-# Builders
+# Builders – Agency Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the marketing website for **Builders**, a web development agency.
 
-Currently, two official plugins are available:
+It's a clean, fast and modern site used to showcase our services, past work, and provide an easy way for potential clients to reach out.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Description
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The website is not a web app – it's simply a **presentation site** designed to introduce the agency, what we do, and how we can help businesses grow online.
 
-- Configure the top-level `parserOptions` property like this:
+Some typical content sections include:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Hero with messaging and call-to-action
+- Services offered (web development, UI/UX, consulting, etc.)
+- Contact form or email CTA
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ⚙️ Tech Stack
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The stack is intentionally light — focused on performance and motion:
+
+- **React** + **Vite** (front-end structure and component model)
+- **Tailwind CSS** for styling
+- **Three.js** for subtle interactive backgrounds / visuals
+- **GSAP** for animations and page transitions
+
+No backend. Static content + motion. Can be deployed to any static host (Vercel, Netlify, GitHub Pages, etc.)
+
+---
+
+## ✅ Setup & Running
+
+Clone and run locally:
+
+```bash
+npm install
+npm run dev
