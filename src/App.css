@@ -21,7 +21,8 @@ h1 {
 
 @media (max-width: 400px) {
   h1 {
-    font-size: 4rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
   }
 }
-

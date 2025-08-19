@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="text-center px-4">
       <h1>Building for <br /> <span className="">Digital</span> Businesses</h1>
-      <div className="pt-4 text-[18px] text-[var(--sub-text)] max-w-[500px] m-auto">
+      <div className="pt-4 lg:text-[18px] text-[var(--sub-text)] max-w-[500px] m-auto text-[14px]">
         <p>Empowering small business with modern solutions that increases digital reach.</p>
       </div>
       <div className="pt-8">
