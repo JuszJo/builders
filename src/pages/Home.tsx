@@ -18,9 +18,9 @@ import google from "../assets/google.png";
 function Header() {
   return (
     <div className="text-center px-4">
-      <h1>Building for <br /> <span className="">Digital</span> Businesses</h1>
+      <h1 className="text-center md:max-w-[750px]">Building for Digital Businesses</h1>
       <div className="pt-4 lg:text-[18px] text-[var(--sub-text)] max-w-[500px] m-auto text-[14px]">
-        <p>Empowering small business with modern solutions that increases digital reach.</p>
+        <p>Empowering small businesses with modern solutions that increases digital reach.</p>
       </div>
       <div className="pt-8">
         <RoundedButton custom_value="Get Started" />
@@ -105,10 +105,10 @@ function ServiceCardLarge(props: ServiceCardProps) {
         <div className="z-2 relative flex flex-col justify-between">
           <div>
             <div>
-              <h5 className="text-[24px] font-medium">{props.header}</h5>
+              <h5 className="md:text-[24px] text-[20px] font-medium">{props.header}</h5>
             </div>
             <div className="pt-8">
-              <p className="text-[var(--sub-text)] text-[16px] max-w-[620px] leading-[30px]">{props.sub}</p>
+              <p className="text-[var(--sub-text)] md:text-[16px] text-[14px] max-w-[620px] leading-[30px]">{props.sub}</p>
             </div>
           </div>
           <div className="pb-4">
@@ -167,7 +167,7 @@ function Services() {
   }, []);
 
   return (
-    <div className="lg:max-w-[1400px] m-auto px-4">
+    <div className="lg:max-w-[1300px] m-auto px-4">
       <div className="text-center">
         <h2 className="!leading-[50px]">Everything We Offer</h2>
         <div className="pt-4 lg:text-[18px] text-[var(--sub-text)] max-w-[520px] m-auto text-[14px]">
