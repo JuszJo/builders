@@ -151,7 +151,7 @@ function Services() {
         trigger: ".service-box",
         // markers: true,
       },
-      y: 600,
+      y: 500,
       opacity: 0,
       stagger: 0.1,
     })
