@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react"
 import { gsap } from "gsap";
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollToPlugin)
 
 import CanvasIntro from "../components/CanvasIntro";
 import Nav from "../components/Nav";
@@ -62,6 +63,7 @@ function ServiceCard(props: ServiceCardProps) {
     <div className={`
       h-[500px] relative border border-[#36414A] overflow-hidden p-4 rounded-[8px]
       bg-[linear-gradient(to_bottom,#1E2429_0%,#14181B_100%)]
+      hover:shadow-[0px_0px_32px_10px_#4aa4b920] transition-shadow duration-300
       service-box
     `}>
       <div className="z-2 relative">
@@ -96,6 +98,7 @@ function ServiceCardLarge(props: ServiceCardProps) {
     <div className={`
       h-[500px] relative border border-[#36414A] overflow-hidden p-4 rounded-[8px]
       bg-[linear-gradient(to_bottom,#1E2429_0%,#14181B_100%)]
+      hover:shadow-[0px_0px_32px_10px_#4aa4b920] transition-shadow duration-300
       service-box-large
     `}>
       <div className="flex h-full">
@@ -197,11 +200,11 @@ export default function Home() {
       return;
     }
 
-    /* const cleanup = CanvasIntro(canvasRef.current);
+    const cleanup = CanvasIntro(canvasRef.current);
 
     () => {
       cleanup && cleanup()
-    } */
+    }
   }, [])
 
   return (

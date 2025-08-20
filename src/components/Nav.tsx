@@ -1,6 +1,11 @@
+import { gsap } from "gsap";
+// gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollToPlugin)
+
 type NavItemProps = {
   value: string,
-  link: string,
+  link?: string,
+  onClick: any
 }
 
 function NavItem(props: NavItemProps) {
@@ -9,8 +14,9 @@ function NavItem(props: NavItemProps) {
       className={`
         cursor-pointer hover:bg-white/10 px-3 py-3 rounded-[24px]
       `}
+      onClick={() => props.onClick()}
     >
-      <a href={props.link}>
+      <a>
         <span className="font-semibold lg:text-lg leading-[8px] text-[12px]">{props.value}</span>
       </a>
     </div>
@@ -20,19 +26,23 @@ function NavItem(props: NavItemProps) {
 const selectables = [
   {
     value: "Home",
-    link: "#"
+    link: "#",
+    onClick: () => { }
   },
   {
     value: "Services",
-    link: "#services"
+    link: "#services",
+    onClick: () => gsap.to(window, { scrollTo: "#services", ease: "power1.inOut" })
   },
   {
     value: "Pricing",
-    link: "#"
+    link: "#",
+    onClick: () => { }
   },
   {
     value: "Contact",
-    link: "#"
+    link: "#",
+    onClick: () => { }
   }
 ]
 
@@ -47,7 +57,7 @@ export default function Nav() {
     `}
     >
       {selectables.map((ni, i) => (
-        <NavItem key={i} value={ni.value} link={ni.link} />
+        <NavItem key={i} value={ni.value} link={ni.link} onClick={ni.onClick} />
       ))}
     </div>
   )

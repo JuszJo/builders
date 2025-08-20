@@ -11,7 +11,7 @@ html {
   font-family: monospace;
   background-color: var(--bg);
   color: var(--white);
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 h1 {
