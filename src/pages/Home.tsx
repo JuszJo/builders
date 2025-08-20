@@ -1,4 +1,7 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef } from "react"
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger)
+
 import CanvasIntro from "../components/CanvasIntro";
 import Nav from "../components/Nav";
 import { RoundedButton } from "../components/Button";
@@ -59,21 +62,22 @@ function ServiceCard(props: ServiceCardProps) {
     <div className={`
       h-[500px] relative border border-[#36414A] overflow-hidden p-4 rounded-[8px]
       bg-[linear-gradient(to_bottom,#1E2429_0%,#14181B_100%)]
+      service-box
     `}>
       <div className="z-2 relative">
         <div>
-          <h5 className="text-[24px] font-medium">{props.header}</h5>
+          <h5 className="md:text-[24px] text-[20px] font-medium">{props.header}</h5>
         </div>
         <div className="pt-8">
-          <p className="text-[var(--sub-text)] text-[16px] leading-[30px]">{props.sub}</p>
+          <p className="text-[var(--sub-text)] md:text-[16px] text-[14px] leading-[30px]">{props.sub}</p>
         </div>
       </div>
       <div className="absolute top-[250px] left-0 w-full h-full">
-        <div className="absolute top-0 w-full h-full">
+        <div className="absolute top-0 w-full h-full px-4">
           <img
             src={props.image}
             alt="web development service"
-            className="m-auto max-w-[400px]"
+            className="m-auto"
           />
 
         </div>
@@ -92,6 +96,7 @@ function ServiceCardLarge(props: ServiceCardProps) {
     <div className={`
       h-[500px] relative border border-[#36414A] overflow-hidden p-4 rounded-[8px]
       bg-[linear-gradient(to_bottom,#1E2429_0%,#14181B_100%)]
+      service-box-large
     `}>
       <div className="flex h-full">
         <div className="z-2 relative flex flex-col justify-between">
@@ -120,13 +125,14 @@ function ServiceCardLarge(props: ServiceCardProps) {
               <img
                 src={props.image}
                 alt="web development service"
-                className="ml-auto"
+                className="ml-auto h-full object-cover"
               />
             </div>
           </div>
           <div className={`
             absolute top-0 left-0 w-full h-[500px]
-            bg-[linear-gradient(to_right,#1E2429_40%,#14181B80_50%,#14181B32_70%)]
+            md:bg-[linear-gradient(to_right,#1E2429_40%,#14181B80_50%,#14181B32_70%)]
+            bg-[linear-gradient(to_right,#1E2429_60%,#14181B80_80%,#14181B32_100%)]
           `}>
           </div>
         </div>
@@ -136,17 +142,38 @@ function ServiceCardLarge(props: ServiceCardProps) {
 }
 
 function Services() {
+  useLayoutEffect(() => {
+    gsap.from(".service-box", {
+      scrollTrigger: {
+        trigger: ".service-box",
+        // markers: true,
+      },
+      y: 600,
+      opacity: 0,
+      stagger: 0.1,
+    })
+
+    gsap.from(".service-box-large", {
+      scrollTrigger: {
+        trigger: ".service-box-large",
+        // markers: true,
+      },
+      y: 300,
+      opacity: 0,
+    })
+  }, []);
+
   return (
     <div className="lg:max-w-[1400px] m-auto px-4">
       <div className="text-center">
-        <h2>Everything We Offer</h2>
+        <h2 className="!leading-[50px]">Everything We Offer</h2>
         <div className="pt-4 lg:text-[18px] text-[var(--sub-text)] max-w-[520px] m-auto text-[14px]">
           <p>See how we give value to companies and accelerate their growth using modern solutions.</p>
         </div>
       </div>
-      <div className="pt-[100px]">
+      <div className="pt-[100px]" id="services">
         <div>
-          <div className="flex gap-8">
+          <div className="flex flex-col lg:flex-row gap-8">
             {
               services.slice(0, 3).map((service, i) => (
                 <ServiceCard {...service} key={i} />

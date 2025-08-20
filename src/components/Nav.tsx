@@ -1,5 +1,6 @@
 type NavItemProps = {
   value: string,
+  link: string,
 }
 
 function NavItem(props: NavItemProps) {
@@ -9,7 +10,9 @@ function NavItem(props: NavItemProps) {
         cursor-pointer hover:bg-white/10 px-3 py-3 rounded-[24px]
       `}
     >
-      <span className="font-semibold lg:text-lg leading-[8px] text-[12px]">{props.value}</span>
+      <a href={props.link}>
+        <span className="font-semibold lg:text-lg leading-[8px] text-[12px]">{props.value}</span>
+      </a>
     </div>
   )
 }
@@ -17,15 +20,19 @@ function NavItem(props: NavItemProps) {
 const selectables = [
   {
     value: "Home",
+    link: "#"
   },
   {
     value: "Services",
+    link: "#services"
   },
   {
     value: "Pricing",
+    link: "#"
   },
   {
     value: "Contact",
+    link: "#"
   }
 ]
 
@@ -40,7 +47,7 @@ export default function Nav() {
     `}
     >
       {selectables.map((ni, i) => (
-        <NavItem key={i} value={ni.value} />
+        <NavItem key={i} value={ni.value} link={ni.link} />
       ))}
     </div>
   )

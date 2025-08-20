@@ -11,6 +11,7 @@ html {
   font-family: monospace;
   background-color: var(--bg);
   color: var(--white);
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -27,8 +28,13 @@ h2 {
 
 @media (max-width: 400px) {
   h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 600;
+  }
+
+  h2 {
     font-size: 2rem;
-    line-height: 2.5rem;
     font-weight: 600;
   }
 }
