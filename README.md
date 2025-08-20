@@ -31,6 +31,12 @@ No backend. Static content + motion. Can be deployed to any static host (Vercel,
 
 ---
 
+## ⚙️ Attributions
+
+https://www.figma.com/design/4hKhy3m8kEsmWwl4lgzz11/Minimal-Skeleton-Illustrations--Community-?node-id=4-2519&t=bWMDCD0KtH7Uyfip-0
+
+---
+
 ## ✅ Setup & Running
 
 Clone and run locally:

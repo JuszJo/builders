@@ -19,7 +19,7 @@ const selectables = [
     value: "Home",
   },
   {
-    value: "Features",
+    value: "Services",
   },
   {
     value: "Pricing",
